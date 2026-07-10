@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinnacle Realty Group — Premium Properties</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="realty.css" />
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- =============================================
+       NAV
+  ============================================= -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">
+      <span class="logo-main">Pinnacle</span>
+      <span class="logo-sub">Realty Group</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#listings" class="mobile-link">Listings</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Contact Us</a>
+  </div>
+
+
+  <!-- =============================================
+       HERO
+       IMAGE: Luxury property exterior or aerial city view, from unsplash
+  ============================================= -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Nigeria's Premier Property Group</span>
+      <h1 class="hero-title">Find your place<br />at the <em>pinnacle.</em></h1>
+      <p class="hero-sub">From luxury homes in Lagos to commercial spaces in Abuja - we connect discerning clients with exceptional properties across Nigeria.</p>
+
+      <!-- SEARCH BAR -->
+      <div class="hero-search">
+        <div class="search-group">
+          <label>Location</label>
+          <input type="text" placeholder="Lagos, Abuja, Ibadan..." />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-group">
+          <label>Type</label>
+          <select>
+            <option>All Properties</option>
+            <option>Buy</option>
+            <option>Rent</option>
+            <option>Commercial</option>
+          </select>
+        </div>
+
+        <div class="search-divider"></div>
+        <div class="search-group">
+          <label>Budget</label>
+          <select>
+            <option>Any Budget</option>
+            <option>Under ₦50M</option>
+            <option>₦50M – ₦150M</option>
+            <option>₦150M – ₦500M</option>
+            <option>Above ₦500M</option>
+          </select>
+        </div>
+        <button class="search-btn">Search</button>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       STATS BAND
+  ============================================= -->
+  <div class="stats-band">
+    <div class="stat">
+      <span class="stat-num">₦42B+</span>
+      <span class="stat-label">Properties Sold</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">850+</span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">12</span>
+      <span class="stat-label">Years in Business</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">6</span>
+      <span class="stat-label">Cities Covered</span>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+       FEATURED LISTINGS — filterable property cards
+       IMAGES: Property photos — exterior or interior shots
+       Ideal size: 600x400px each
+  ============================================= -->
+  <section class="listings" id="listings">
+    <div class="container">
+      <span class="section-eyebrow">Featured Listings</span>
+      <h2 class="section-title">Properties that define living.</h2>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="buy">For Sale</button>
+        <button class="filter-btn" data-filter="rent">For Rent</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+      </div>
+
+      <div class="listings-grid" id="listingsGrid">
+
+        <!-- PROPERTY 1 -->
+        <div class="property-card" data-category="buy">
+          <div class="property-img">
+            <!-- IMAGE: Luxury house exterior -->
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=75&auto=format&fit=crop" alt="Luxury Villa, Ikoyi" class="lightbox-img" />
+            <span class="property-badge">For Sale</span>
+            <span class="property-price">₦320,000,000</span>
+          </div>
+          <div class="property-info">
+            <h3>Luxury Villa, Ikoyi</h3>
+            <p class="property-location">📍 Ikoyi, Lagos</p>
+            <div class="property-features">
+              <span>🛏 5 Beds</span>
+              <span>🚿 4 Baths</span>
+              <span>📐 650 sqm</span>
+              <span>🚗 3 Parking</span>
+            </div>
+            <a href="#contact" class="btn btn-bronze">Enquire Now</a>
+          </div>
+        </div>
+
+        <!-- PROPERTY 2 -->
+        <div class="property-card" data-category="rent">
+          <div class="property-img">
+            <!-- IMAGE: Modern apartment interior -->
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=75&auto=format&fit=crop" alt="Modern Apartment, Victoria Island" class="lightbox-img" />
+            <span class="property-badge rent">For Rent</span>
+            <span class="property-price">₦8,500,000/yr</span>
+          </div>
+          <div class="property-info">
+            <h3>Modern Apartment, VI</h3>
+            <p class="property-location">📍 Victoria Island, Lagos</p>
+            <div class="property-features">
+              <span>🛏 3 Beds</span>
+              <span>🚿 3 Baths</span>
+              <span>📐 210 sqm</span>
+              <span>🚗 2 Parking</span>
+            </div>
+            <a href="#contact" class="btn btn-bronze">Enquire Now</a>
+          </div>
+        </div>
+
+        <!-- PROPERTY 3 -->
+        <div class="property-card" data-category="buy">
+          <div class="property-img">
+            <!-- IMAGE: Detached house -->
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=75&auto=format&fit=crop" alt="Detached Duplex, Lekki" class="lightbox-img" />
+            <span class="property-badge">For Sale</span>
+            <span class="property-price">₦250,000,000</span>
+          </div>
+          <div class="property-info">
+            <h3>Detached Duplex, Lekki</h3>
+            <p class="property-location">📍 Lekki Phase 1, Lagos</p>
+            <div class="property-features">
+              <span>🛏 4 Beds</span>
+              <span>🚿 3 Baths</span>
+              <span>📐 400 sqm</span>
+              <span>🚗 2 Parking</span>
+            </div>
+            <a href="#contact" class="btn btn-bronze">Enquire Now</a>
+          </div>
+        </div>
+
+        <!-- PROPERTY 4 -->
+        <div class="property-card" data-category="commercial">
+          <div class="property-img">
+            <!-- IMAGE: Office space or commercial building -->
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=75&auto=format&fit=crop" alt="Office Space, Abuja" class="lightbox-img" />
+            <span class="property-badge commercial">Commercial</span>
+            <span class="property-price">₦45,000,000/yr</span>
+          </div>
+          <div class="property-info">
+            <h3>Prime Office Space, Abuja</h3>
+            <p class="property-location">📍 Central Business District, Abuja</p>
+            <div class="property-features">
+              <span>🏢 Open Plan</span>
+              <span>📐 850 sqm</span>
+              <span>🚗 10 Parking</span>
+              <span>⚡ 24hr Power</span>
+            </div>
+            <a href="#contact" class="btn btn-bronze">Enquire Now</a>
+          </div>
+        </div>
+
+        <!-- PROPERTY 5 -->
+        <div class="property-card" data-category="rent">
+          <div class="property-img">
+            <!-- IMAGE: Semi-detached house -->
+            <img src="realty-images/detached.jpg" alt="Semi-Detached, Osogbo" class="lightbox-img" />
+            <span class="property-badge rent">For Rent</span>
+            <span class="property-price">₦2,800,000/yr</span>
+          </div>
+          <div class="property-info">
+            <h3>Semi-Detached, Osogbo</h3>
+            <p class="property-location">📍 GRA, Osogbo, Osun</p>
+            <div class="property-features">
+              <span>🛏 3 Beds</span>
+              <span>🚿 2 Baths</span>
+              <span>📐 180 sqm</span>
+              <span>🚗 1 Parking</span>
+            </div>
+            <a href="#contact" class="btn btn-bronze">Enquire Now</a>
+          </div>
+        </div>
+
+        <!-- PROPERTY 6 -->
+        <div class="property-card" data-category="buy">
+          <div class="property-img">
+            <!-- IMAGE: Land or estate development -->
+            <img src="realty-images/service-land.jpg" alt="Estate Land, Ibadan" class="lightbox-img" />
+            <span class="property-badge">For Sale</span>
+            <span class="property-price">₦25,000,000</span>
+          </div>
+          <div class="property-info">
+            <h3>Serviced Land, Ibadan</h3>
+            <p class="property-location">📍 Bodija, Ibadan, Oyo</p>
+            <div class="property-features">
+              <span>📐 600 sqm</span>
+              <span>✅ C of O</span>
+              <span>🔌 All Services</span>
+              <span>🛣 Tarred Road</span>
+            </div>
+            <a href="#contact" class="btn btn-bronze">Enquire Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SERVICES — alternating layout
+       IMAGES: 3 service photos
+       Ideal size: 700x500px
+  ============================================= -->
+  <section class="services" id="services">
+    <div class="container">
+      <span class="section-eyebrow">What We Do</span>
+      <h2 class="section-title">Full-spectrum property services.</h2>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img">
+        <!-- IMAGE 1: Agent showing property -->
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=75&auto=format&fit=crop" alt="Property Sales" />
+      </div>
+      <div class="service-text">
+        <span class="service-num">01</span>
+        <h3>Property Sales</h3>
+        <p>We match buyers with their ideal properties : from entry-level homes to ultra-premium estates. Our agents negotiate the best terms so you don't have to.</p>
+        <ul class="service-list">
+          <li>Residential & commercial sales</li>
+          <li>Off-plan & new developments</li>
+          <li>Land acquisition & documentation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-row reverse">
+      <div class="service-img">
+        <!-- IMAGE 2: Property management -->
+        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=700&q=75&auto=format&fit=crop" alt="Property Management" />
+      </div>
+      <div class="service-text">
+        <span class="service-num">02</span>
+        <h3>Property Management</h3>
+        <p>Own property but not the time to manage it? We handle everything : tenants, maintenance, rent collection, and legal compliance on your behalf.</p>
+        <ul class="service-list">
+          <li>Tenant sourcing & vetting</li>
+          <li>Rent collection & remittance</li>
+          <li>Facility & maintenance management</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img">
+        <!-- IMAGE 3: Property valuation -->
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=75&auto=format&fit=crop" alt="Property Valuation" />
+      </div>
+      <div class="service-text">
+        <span class="service-num">03</span>
+        <h3>Valuation & Advisory</h3>
+        <p>Whether buying, selling, or investing - our certified valuers give you accurate, unbiased property assessments backed by current market data.</p>
+        <ul class="service-list">
+          <li>Market & investment valuations</li>
+          <li>Due diligence & title verification</li>
+          <li>Portfolio strategy & advisory</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       WHY CHOOSE US — icon + text grid 
+  ============================================= -->
+  
+  <section class="why-us" id="about">
+    <div class="container">
+      <span class="section-eyebrow">Why Pinnacle</span>
+      <h2 class="section-title">Built on trust. Driven by results.</h2>
+      <p class="why-intro">Over a decade of closing deals, protecting clients, and setting the standard for professional real estate practice in Nigeria.</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🏆</div>
+          <h3>Award-Winning Agency</h3>
+          <p>Recognised as one of Nigeria's top real estate agencies three years running by the Nigerian Institute of Estate Surveyors.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📋</div>
+          <h3>Fully Licensed & Regulated</h3>
+          <p>Registered with NIESV and EFAB. Every transaction is legally documented and verified for your complete peace of mind.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🤝</div>
+          <h3>Client-First Always</h3>
+          <p>We don't earn until you do. Our fee structure is tied to successful outcomes - your win is our win.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🗺</div>
+          <h3>Nationwide Coverage</h3>
+          <p>Active in Lagos, Abuja, Ibadan, Osogbo, Port Harcourt, and Enugu. One agency, all of Nigeria.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📊</div>
+          <h3>Data-Driven Pricing</h3>
+          <p>We use real-time market data to price and value properties accurately — so you never overpay or undersell.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Fast Turnaround</h3>
+          <p>Average listing-to-close time of 47 days. We move quickly without cutting corners on due diligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       TESTIMONIALS
+  ============================================= -->
+  <section class="testimonials">
+    <div class="container">
+      <span class="section-eyebrow light">Client Stories</span>
+      <h2 class="section-title light">What our clients say.</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Pinnacle found us a property in Lekki we thought was out of our budget. Their negotiation got us in at 15% below asking price."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Emeka & Chisom A.</span>
+            <span class="author-detail">Buyers, Lagos</span>
+          </div>
+        </div>
+        <div class="testimonial-card featured">
+          <div class="stars">★★★★★</div>
+          <p>"I own three properties across Nigeria and Pinnacle manages all of them. I haven't had to worry about a single tenant issue in two years."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Alhaji Musa B.</span>
+            <span class="author-detail">Property Investor, Abuja</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"As a returning diaspora, I was nervous about buying land in Nigeria remotely. Pinnacle handled everything transparently and professionally."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Funmilayo O.</span>
+            <span class="author-detail">Buyer, UK Diaspora</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       CONTACT
+  ============================================= -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-text">
+          <span class="section-eyebrow">Get In Touch</span>
+          <h2 class="section-title">Let's find your<br />next property.</h2>
+          <p>Whether you're buying, selling, renting or investing — our team is ready to guide you every step of the way.</p>
+
+          <div class="contact-details">
+            <a href="tel:+2349168671007" class="contact-item">
+              <span class="contact-icon">📞</span>
+              <span>+234 916 867 1007</span>
+            </a>
+            <a href="mailto:hello@pinnaclerealty.ng" class="contact-item">
+              <span class="contact-icon">✉</span>
+              <span>hello@pinnaclerealty.ng</span>
+            </a>
+            <span class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>12 Adesanya Street, GRA, Osogbo, Osun State</span>
+            </span>
+          </div>
+
+          <!-- WhatsApp button -->
+          <a class="btn btn-whatsapp" id="whatsappBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="cname">Full Name</label>
+            <input type="text" id="cname" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="cemail">Email Address</label>
+            <input type="email" id="cemail" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="cphone">Phone Number</label>
+            <input type="tel" id="cphone" placeholder="+234 800 000 0000" />
+          </div>
+          <div class="form-group">
+            <label for="cinterest">I'm interested in</label>
+            <select id="cinterest" required>
+              <option value="">Select an option</option>
+              <option>Buying a Property</option>
+              <option>Renting a Property</option>
+              <option>Selling my Property</option>
+              <option>Property Management</option>
+              <option>Valuation & Advisory</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cmessage">Message</label>
+            <textarea id="cmessage" rows="4" placeholder="Tell us what you're looking for…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-bronze full-btn">Send Enquiry</button>
+          <div class="form-success" id="formSuccess">
+            ✓ Message received — our team will be in touch within 24 hours.
+          </div>
+        </form>
+      </div>
+
+      <!-- Google Map embed — no API key needed for basic embed -->
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.0!2d4.5624!3d7.7827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDYnNTcuNyJOIDTCsDMzJzQ0LjYiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+          width="100%"
+          height="320"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Pinnacle Realty Group Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Pinnacle<br /><small>Realty Group</small></span>
+        <p>Nigeria's premier property group.<br />Buying, selling, and managing<br />exceptional properties since 2012.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Properties</h4>
+        <a href="#listings">For Sale</a>
+        <a href="#listings">For Rent</a>
+        <a href="#listings">Commercial</a>
+        <a href="#listings">New Developments</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Property Sales</a>
+        <a href="#services">Property Management</a>
+        <a href="#services">Valuation & Advisory</a>
+        <a href="#contact">Book Consultation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+2349168671007">+234 916 867 1007</a>
+        <a href="mailto:hello@pinnaclerealty.ng">hello@pinnaclerealty.ng</a>
+        <p>12 Adesanya Street, GRA<br />Osogbo, Osun State</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Pinnacle Realty Group. All rights reserved.</span>
+      <span class="footer-credit">
+        Website by <strong>W-Tech</strong> ·
+        <a href="https://w-tech-potfolio.netlify.app" target="_blank">w-tech-potfolio.netlify.app</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX — sits hidden, triggered by clicking any .lightbox-img -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-arrow left" id="lightboxPrev">&#8592;</button>
+  <div class="lightbox-img-wrap">
+    <img src="" alt="" id="lightboxImg" />
+  </div>
+  <button class="lightbox-arrow right" id="lightboxNext">&#8594;</button>
+</div>
+
+  <script src="realty.js"></script>
+</body>
+</html>
